@@ -1,0 +1,47 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-mobile-ads",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+          "name" : "GoogleMobileAds"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "7778cc1ab037c10dbbe026959e51e616bd961be9",
+            "version" : "11.13.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "swift-package-manager-google-mobile-ads"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-user-messaging-platform",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+          "name" : "GoogleUserMessagingPlatform"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "708a282840c2171ee63bd93b87afa49fe507d70e",
+            "version" : "2.7.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "swift-package-manager-google-user-messaging-platform"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}
