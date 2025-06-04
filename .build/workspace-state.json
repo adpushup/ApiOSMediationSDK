@@ -1,7 +1,54 @@
 {
   "object" : {
     "artifacts" : [
-
+      {
+        "kind" : "xcframework",
+        "packageRef" : {
+          "identity" : "apiosmediationsdk",
+          "kind" : "root",
+          "location" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK",
+          "name" : "ApiOSMediationSDK"
+        },
+        "path" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK/.build/artifacts/apiosmediationsdk/ApMediationSDK/ApMediationSDK.xcframework",
+        "source" : {
+          "checksum" : "c3442ccc5dcf4211956a239846085ffe4c4d49ca564fbb1f8591ff716bac878f",
+          "type" : "remote",
+          "url" : "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.0/ApMediationSDK.xcframework.zip"
+        },
+        "targetName" : "ApMediationSDK"
+      },
+      {
+        "kind" : "xcframework",
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-mobile-ads",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+          "name" : "GoogleMobileAds"
+        },
+        "path" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK/.build/artifacts/swift-package-manager-google-mobile-ads/GoogleMobileAds/GoogleMobileAds.xcframework",
+        "source" : {
+          "checksum" : "f2c09c60ee331ce029f563304ad73a481d57ace0d4bc11ce33a2bf59497c59bf",
+          "type" : "remote",
+          "url" : "https://dl.google.com/googleadmobadssdk/f2c09c60ee331ce0/googlemobileadsios-spm-11.13.0.zip"
+        },
+        "targetName" : "GoogleMobileAds"
+      },
+      {
+        "kind" : "xcframework",
+        "packageRef" : {
+          "identity" : "swift-package-manager-google-user-messaging-platform",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
+          "name" : "GoogleUserMessagingPlatform"
+        },
+        "path" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK/.build/artifacts/swift-package-manager-google-user-messaging-platform/UserMessagingPlatform/UserMessagingPlatform.xcframework",
+        "source" : {
+          "checksum" : "bd2f30ebe527900b8d789e5e54831b021d032e7dbfd73b90e6f73c2a48b1c683",
+          "type" : "remote",
+          "url" : "https://dl.google.com/googleadmobadssdk/bd2f30ebe527900b/googleusermessagingplatformios-spm-2.7.0.zip"
+        },
+        "targetName" : "UserMessagingPlatform"
+      }
     ],
     "dependencies" : [
       {

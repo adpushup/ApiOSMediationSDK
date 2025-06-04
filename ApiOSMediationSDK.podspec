@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ApiOSMediationSDK"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "ApMediation SDK provides Mediation support for iOS."
   spec.description  = "Adpushup Mediation SDK provides the functionality to integrate without any code changes just import and its done. It can work along with other platforms without any changes required"
   spec.homepage     = "https://github.com/adpushup/ApiOSMediationSDK"
@@ -11,6 +11,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/adpushup/ApiOSMediationSDK.git", :tag => spec.version.to_s }
   spec.requires_arc = true
   spec.swift_version = "5.0"
-  spec.vendored_frameworks = "Sources/ApiOSMediationSDK/ApMediationSDK.xcframework"
+  spec.vendored_frameworks = "Sources/ApiOSMediationSDK/ApMediationiOSSDK.xcframework"
+  spec.dependency 'Google-Mobile-Ads-SDK', '~> 11.13'
 
 end
