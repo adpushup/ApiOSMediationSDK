@@ -11,24 +11,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
-@objc public protocol ApRewardedAdListener {
-  @objc optional func onAdPresented()
-  @objc optional func onAdClicked()
-  @objc optional func onAdDismissed()
-  @objc optional func onAdImpression()
-  @objc optional func onError()
-  @objc optional func onUserRewarded()
-}
-@objc @_inheritsConvenienceInitializers open class ApRewardedListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApRewardedAdListener {
-  @objc public func onAdClicked()
-  @objc public func onAdImpression()
-  @objc public func onAdPresented()
-  @objc public func onError()
-  @objc public func onAdDismissed()
-  @objc public func onUserRewarded()
-  @objc override dynamic public init()
-  @objc deinit
-}
 @objc public protocol ApInterstitialAdListener {
   @objc optional func onAdPresented()
   @objc optional func onAdClicked()
@@ -45,7 +27,9 @@ import os
   @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class ApMediationSDK {
+@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
+  @objc public static func enableDebug(isEnable: Swift.Bool)
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class ApMediationAdapter : ObjectiveC.NSObject, GoogleMobileAds.GADMediationAdapter {
@@ -56,6 +40,24 @@ import os
   @objc public static func setUpWith(_ adConfiguration: GoogleMobileAds.GADMediationServerConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationAdapterSetUpCompletionBlock)
   @objc public func loadInterstitial(for adConfiguration: GoogleMobileAds.GADMediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
   @objc public func loadRewardedAd(for adConfiguration: GoogleMobileAds.GADMediationRewardedAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationRewardedLoadCompletionHandler)
+  @objc deinit
+}
+@objc public protocol ApRewardedAdListener {
+  @objc optional func onAdPresented()
+  @objc optional func onAdClicked()
+  @objc optional func onAdDismissed()
+  @objc optional func onAdImpression()
+  @objc optional func onError()
+  @objc optional func onUserRewarded()
+}
+@objc @_inheritsConvenienceInitializers open class ApRewardedListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApRewardedAdListener {
+  @objc public func onAdClicked()
+  @objc public func onAdImpression()
+  @objc public func onAdPresented()
+  @objc public func onError()
+  @objc public func onAdDismissed()
+  @objc public func onUserRewarded()
+  @objc override dynamic public init()
   @objc deinit
 }
 public protocol ApAdLoadListener {
