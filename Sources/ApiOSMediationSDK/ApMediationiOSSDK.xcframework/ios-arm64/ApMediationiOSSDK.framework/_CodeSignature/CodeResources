@@ -18,7 +18,7 @@
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		MYcXF91LAc1yCYTuI274jJMvRWk=
+		wFjkdJzXMiKsH/6XUlu0cLt3tjI=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		w0vYKZuT8dyYvgxVz16MMUZDeTE=
+		Cv0ftTXrKaZNUdjv9//TOUCElXA=
 		</data>
 		<key>UserMessagingPlatformResources.bundle/Info.plist</key>
 		<data>
@@ -73,11 +73,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MYcXF91LAc1yCYTuI274jJMvRWk=
+			wFjkdJzXMiKsH/6XUlu0cLt3tjI=
 			</data>
 			<key>hash2</key>
 			<data>
-			9nMLKjI/6KEN3MVylCwUCN/n+Focy5d8BVPeK+T5jyw=
+			omnGuOhT65RS99J2my8Wnhzhv2TLb6yKfCLVz5dT/KU=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -117,11 +117,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w0vYKZuT8dyYvgxVz16MMUZDeTE=
+			Cv0ftTXrKaZNUdjv9//TOUCElXA=
 			</data>
 			<key>hash2</key>
 			<data>
-			aM8mEtnr4JNWykl21KiXvCx6B6fit80amTmKCKeA1gw=
+			iERH6Hd2tBKf2gg3oWaWOiHz9ObRA/aqj1mdJXeifaE=
 			</data>
 		</dict>
 		<key>UserMessagingPlatformResources.bundle/Info.plist</key>

@@ -17,8 +17,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "ApiOSMediationSDK",
-            url: "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.2/ApMediationiOSSDK.xcframework.zip",
-            checksum: "aa4e18ade72f01f19bfce13f30ec9c3770288c8b2d6fe38e884e6bd418478a6a"
+            url: "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.3/ApMediationiOSSDK.xcframework.zip",
+            checksum: "39a19df2f84f3b6c36c867b48822fe283b51afb23aad532aaf653b93593ed0e1"
         )
     ]
 )

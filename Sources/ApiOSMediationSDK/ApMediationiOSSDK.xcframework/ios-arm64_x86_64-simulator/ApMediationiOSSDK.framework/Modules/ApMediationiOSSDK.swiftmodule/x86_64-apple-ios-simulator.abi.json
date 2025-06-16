@@ -6,6 +6,16 @@
     "children": [
       {
         "kind": "Import",
+        "name": "GoogleMobileAds",
+        "printedName": "GoogleMobileAds",
+        "declKind": "Import",
+        "moduleName": "ApMediationiOSSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -1720,21 +1730,18 @@
         "declAttributes": [
           "RawDocComment"
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "GoogleMobileAds",
-        "printedName": "GoogleMobileAds",
-        "declKind": "Import",
-        "moduleName": "ApMediationiOSSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/AdMob\/ApMediationRewarded.swift",
+      "kind": "StringLiteral",
+      "offset": 266,
+      "length": 23,
+      "value": "\"ApMediationRewardedAd\""
+    },
     {
       "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/RemoteConfigManager.swift",
       "kind": "StringLiteral",
@@ -2154,13 +2161,6 @@
       "offset": 292,
       "length": 24,
       "value": "\"ApMediationSdkSettings\""
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/AdMob\/ApMediationRewarded.swift",
-      "kind": "StringLiteral",
-      "offset": 266,
-      "length": 23,
-      "value": "\"ApMediationRewardedAd\""
     }
   ]
 }
