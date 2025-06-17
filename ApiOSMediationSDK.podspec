@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ApiOSMediationSDK"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "ApMediation SDK provides Mediation support for iOS."
   spec.description  = "Adpushup Mediation SDK provides the functionality to integrate without any code changes just import and its done. It can work along with other platforms without any changes required"
   spec.homepage     = "https://github.com/adpushup/ApiOSMediationSDK"

@@ -11,21 +11,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
-@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
-  @objc public static func enableDebug(isEnable: Swift.Bool)
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class ApMediationAdapter : ObjectiveC.NSObject, GoogleMobileAds.GADMediationAdapter {
-  @objc required override dynamic public init()
-  @objc public static func adapterVersion() -> GoogleMobileAds.GADVersionNumber
-  @objc public static func adSDKVersion() -> GoogleMobileAds.GADVersionNumber
-  @objc public static func networkExtrasClass() -> (any GoogleMobileAds.GADAdNetworkExtras.Type)?
-  @objc public static func setUpWith(_ adConfiguration: GoogleMobileAds.GADMediationServerConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationAdapterSetUpCompletionBlock)
-  @objc public func loadInterstitial(for adConfiguration: GoogleMobileAds.GADMediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
-  @objc public func loadRewardedAd(for adConfiguration: GoogleMobileAds.GADMediationRewardedAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationRewardedLoadCompletionHandler)
-  @objc deinit
-}
 @objc public protocol ApRewardedAdListener {
   @objc optional func onAdPresented()
   @objc optional func onAdClicked()
@@ -65,5 +50,20 @@ public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
   @objc public func onError()
   @objc public func onAdDismissed()
   @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
+  @objc public static func enableDebug(isEnable: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class ApMediationAdapter : ObjectiveC.NSObject, GoogleMobileAds.GADMediationAdapter {
+  @objc required override dynamic public init()
+  @objc public static func adapterVersion() -> GoogleMobileAds.GADVersionNumber
+  @objc public static func adSDKVersion() -> GoogleMobileAds.GADVersionNumber
+  @objc public static func networkExtrasClass() -> (any GoogleMobileAds.GADAdNetworkExtras.Type)?
+  @objc public static func setUpWith(_ adConfiguration: GoogleMobileAds.GADMediationServerConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationAdapterSetUpCompletionBlock)
+  @objc public func loadInterstitial(for adConfiguration: GoogleMobileAds.GADMediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
+  @objc public func loadRewardedAd(for adConfiguration: GoogleMobileAds.GADMediationRewardedAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationRewardedLoadCompletionHandler)
   @objc deinit
 }

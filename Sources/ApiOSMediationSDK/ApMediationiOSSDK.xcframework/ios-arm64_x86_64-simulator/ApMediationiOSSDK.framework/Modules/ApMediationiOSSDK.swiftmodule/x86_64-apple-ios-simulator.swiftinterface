@@ -11,22 +11,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
-@objc public protocol ApInterstitialAdListener {
-  @objc optional func onAdPresented()
-  @objc optional func onAdClicked()
-  @objc optional func onAdDismissed()
-  @objc optional func onAdImpression()
-  @objc optional func onError()
-}
-@objc @_inheritsConvenienceInitializers open class ApInterstitialListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApInterstitialAdListener {
-  @objc public func onAdClicked()
-  @objc public func onAdImpression()
-  @objc public func onAdPresented()
-  @objc public func onError()
-  @objc public func onAdDismissed()
-  @objc override dynamic public init()
-  @objc deinit
-}
 @_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
   @objc public static func enableDebug(isEnable: Swift.Bool)
   @objc override dynamic public init()
@@ -66,4 +50,20 @@ public protocol ApAdLoadListener {
 public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
   public init(handler: @escaping (Swift.Bool) -> Swift.Void)
   public func loadStatus(isLoaded: Swift.Bool)
+}
+@objc public protocol ApInterstitialAdListener {
+  @objc optional func onAdPresented()
+  @objc optional func onAdClicked()
+  @objc optional func onAdDismissed()
+  @objc optional func onAdImpression()
+  @objc optional func onError()
+}
+@objc @_inheritsConvenienceInitializers open class ApInterstitialListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApInterstitialAdListener {
+  @objc public func onAdClicked()
+  @objc public func onAdImpression()
+  @objc public func onAdPresented()
+  @objc public func onError()
+  @objc public func onAdDismissed()
+  @objc override dynamic public init()
+  @objc deinit
 }
