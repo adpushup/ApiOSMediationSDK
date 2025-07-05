@@ -11,9 +11,9 @@
         },
         "path" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK/.build/artifacts/apiosmediationsdk/ApiOSMediationSDK/ApMediationiOSSDK.xcframework",
         "source" : {
-          "checksum" : "39a19df2f84f3b6c36c867b48822fe283b51afb23aad532aaf653b93593ed0e1",
+          "checksum" : "f96c42187dbbd33dcc794b81de08c99088b3ea1cb10bd3c485a8d85e8c242731",
           "type" : "remote",
-          "url" : "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.3/ApMediationiOSSDK.xcframework.zip"
+          "url" : "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.5/ApMediationiOSSDK.xcframework.zip"
         },
         "targetName" : "ApiOSMediationSDK"
       },
