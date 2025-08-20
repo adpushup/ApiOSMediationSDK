@@ -11,6 +11,20 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
+@objc public protocol ApBannerListener {
+  @objc func onAdOpened()
+  @objc func onAdClicked()
+  @objc func onAdClosed()
+  @objc func onAdImpression()
+}
+@objc @_inheritsConvenienceInitializers open class ApBannerAdListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApBannerListener {
+  @objc public func onAdOpened()
+  @objc public func onAdClicked()
+  @objc public func onAdClosed()
+  @objc public func onAdImpression()
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public protocol ApInterstitialAdListener {
   @objc optional func onAdPresented()
   @objc optional func onAdClicked()
@@ -67,18 +81,4 @@ public protocol ApAdLoadListener {
 public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
   public init(handler: @escaping (Swift.Bool) -> Swift.Void)
   public func loadStatus(isLoaded: Swift.Bool)
-}
-@objc public protocol ApBannerListener {
-  @objc func onAdOpened()
-  @objc func onAdClicked()
-  @objc func onAdClosed()
-  @objc func onAdImpression()
-}
-@objc @_inheritsConvenienceInitializers open class ApBannerAdListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApBannerListener {
-  @objc public func onAdOpened()
-  @objc public func onAdClicked()
-  @objc public func onAdClosed()
-  @objc public func onAdImpression()
-  @objc override dynamic public init()
-  @objc deinit
 }

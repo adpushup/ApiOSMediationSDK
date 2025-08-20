@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ApMediationiOSSDK
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ApMediationiOSSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Foundation
 import GoogleMobileAds
@@ -11,22 +11,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
-@objc public protocol ApInterstitialAdListener {
-  @objc optional func onAdPresented()
-  @objc optional func onAdClicked()
-  @objc optional func onAdDismissed()
-  @objc optional func onAdImpression()
-  @objc optional func onError()
-}
-@objc @_inheritsConvenienceInitializers open class ApInterstitialListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApInterstitialAdListener {
-  @objc public func onAdClicked()
-  @objc public func onAdImpression()
-  @objc public func onAdPresented()
-  @objc public func onError()
-  @objc public func onAdDismissed()
-  @objc override dynamic public init()
-  @objc deinit
-}
 @_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
   @objc public static func enableDebug(isEnable: Swift.Bool)
   @objc override dynamic public init()
@@ -79,6 +63,22 @@ public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
   @objc public func onAdClicked()
   @objc public func onAdClosed()
   @objc public func onAdImpression()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol ApInterstitialAdListener {
+  @objc optional func onAdPresented()
+  @objc optional func onAdClicked()
+  @objc optional func onAdDismissed()
+  @objc optional func onAdImpression()
+  @objc optional func onError()
+}
+@objc @_inheritsConvenienceInitializers open class ApInterstitialListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApInterstitialAdListener {
+  @objc public func onAdClicked()
+  @objc public func onAdImpression()
+  @objc public func onAdPresented()
+  @objc public func onError()
+  @objc public func onAdDismissed()
   @objc override dynamic public init()
   @objc deinit
 }
