@@ -2,8 +2,10 @@
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
 // swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ApMediationiOSSDK
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import AppLovinSDK
 import Foundation
 import GoogleMobileAds
+import IronSource
 import Swift
 import UIKit
 import _Concurrency
@@ -11,6 +13,18 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
+public protocol ApAdLoadListener {
+  func loadStatus(isLoaded: Swift.Bool)
+}
+public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
+  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
+  public func loadStatus(isLoaded: Swift.Bool)
+}
+@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
+  @objc public static func enableDebug(isEnable: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public protocol ApBannerListener {
   @objc func onAdOpened()
   @objc func onAdClicked()
@@ -41,11 +55,6 @@ import os
   @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
-  @objc public static func enableDebug(isEnable: Swift.Bool)
-  @objc override dynamic public init()
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class ApMediationAdapter : ObjectiveC.NSObject, GoogleMobileAds.GADMediationAdapter {
   @objc required override dynamic public init()
   @objc public static func adapterVersion() -> GoogleMobileAds.GADVersionNumber
@@ -55,6 +64,126 @@ import os
   @objc public func loadInterstitial(for adConfiguration: GoogleMobileAds.GADMediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
   @objc public func loadRewardedAd(for adConfiguration: GoogleMobileAds.GADMediationRewardedAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationRewardedLoadCompletionHandler)
   @objc public func loadBanner(for adConfiguration: GoogleMobileAds.GADMediationBannerAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationBannerLoadCompletionHandler)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(ApUnityRewardedAdCustomAdapter) public class ApUnityRewardedAdCustomAdapter : IronSource.ISBaseRewardedVideo, ApMediationiOSSDK.ApAdLoadListener, ApMediationiOSSDK.ApRewardedAdListener {
+  @objc override dynamic public func loadAd(with adData: IronSource.ISAdData, delegate: any IronSource.ISRewardedVideoAdDelegate)
+  @objc override dynamic public func showAd(with viewController: UIKit.UIViewController, adData: IronSource.ISAdData, delegate: any IronSource.ISRewardedVideoAdDelegate)
+  @objc override dynamic public func isAdAvailable(with adData: IronSource.ISAdData) -> Swift.Bool
+  public func loadStatus(isLoaded: Swift.Bool)
+  @objc override dynamic public init(_ providerConfig: IronSource.ISAdapterConfig)
+  @objc override dynamic public init(adUnit: IronSource.ISAdUnit, adapterConfig: IronSource.ISAdapterConfig)
+  @objc override dynamic public init(adUnit: IronSource.ISAdUnit, adapterConfig: IronSource.ISAdapterConfig, adUnitObjectId: Foundation.UUID?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension ApMediationiOSSDK.ApUnityRewardedAdCustomAdapter : IronSource.ISRewardedVideoAdDelegate {
+  @objc dynamic public func adRewarded()
+  @objc dynamic public func adRewarded(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidClose()
+  @objc dynamic public func adDidClose(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidShowSucceed()
+  @objc dynamic public func adDidShowSucceed(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidBecomeVisible()
+  @objc dynamic public func adDidBecomeVisible(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidStart()
+  @objc dynamic public func adDidStart(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidEnd()
+  @objc dynamic public func adDidEnd(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidLoad()
+  @objc dynamic public func adDidLoad(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidFailToLoadWith(_ errorType: IronSource.ISAdapterErrorType, errorCode: Swift.Int, errorMessage: Swift.String?)
+  @objc dynamic public func adDidFailToLoadWith(_ errorType: IronSource.ISAdapterErrorType, errorCode: Swift.Int, errorMessage: Swift.String?, extraData: [Swift.String : Any])
+  @objc dynamic public func adDidOpen()
+  @objc dynamic public func adDidOpen(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidFailToShowWithErrorCode(_ errorCode: Swift.Int, errorMessage: Swift.String?)
+  @objc dynamic public func adDidFailToShowWithErrorCode(_ errorCode: Swift.Int, errorMessage: Swift.String?, extraData: [Swift.String : Any])
+  @objc dynamic public func adDidClick()
+  @objc dynamic public func adDidClick(withExtraData extraData: [Swift.String : Any])
+}
+@_inheritsConvenienceInitializers @objc(ApMediationAppLovinAdapter) public class ApMediationAppLovinAdapter : ObjectiveC.NSObject, AppLovinSDK.MAAdapter, AppLovinSDK.MAInterstitialAdapter, ApMediationiOSSDK.ApAdLoadListener, ApMediationiOSSDK.ApInterstitialAdListener, ApMediationiOSSDK.ApRewardedAdListener {
+  @objc public var sdkVersion: Swift.String
+  @objc public var adapterVersion: Swift.String
+  @objc public var isBeta: Swift.Bool
+  @objc required override dynamic public init()
+  @objc public func initialize(with parameters: any AppLovinSDK.MAAdapterInitializationParameters, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc public func loadInterstitialAd(for parameters: any AppLovinSDK.MAAdapterResponseParameters, andNotify delegate: any AppLovinSDK.MAInterstitialAdapterDelegate)
+  @objc public func showInterstitialAd(for parameters: any AppLovinSDK.MAAdapterResponseParameters, andNotify delegate: any AppLovinSDK.MAInterstitialAdapterDelegate)
+  public func loadRewardedAd(for parameters: any AppLovinSDK.MAAdapterResponseParameters, andNotify delegate: any AppLovinSDK.MARewardedAdapterDelegate)
+  public func showRewardedAd(for parameters: any AppLovinSDK.MAAdapterResponseParameters, andNotify delegate: any AppLovinSDK.MARewardedAdapterDelegate)
+  public func loadStatus(isLoaded: Swift.Bool)
+  @objc public func shouldInitializeOnMainThread() -> Foundation.NSNumber?
+  @objc public func shouldCollectSignalsOnMainThread() -> Foundation.NSNumber?
+  @objc public func shouldLoadAdsOnMainThread(for adFormat: AppLovinSDK.MAAdFormat) -> Foundation.NSNumber?
+  @objc public func shouldShowAdsOnMainThread(for adFormat: AppLovinSDK.MAAdFormat) -> Foundation.NSNumber?
+  @objc public func shouldDestroyOnMainThread() -> Foundation.NSNumber?
+  @objc public func destroy()
+  @objc deinit
+}
+extension ApMediationiOSSDK.ApMediationAppLovinAdapter : AppLovinSDK.MAInterstitialAdapterDelegate, AppLovinSDK.MARewardedAdapterDelegate {
+  @objc dynamic public func didLoadRewardedAd()
+  @objc dynamic public func didLoadRewardedAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didFailToLoadRewardedAdWithError(_ adapterError: AppLovinSDK.MAAdapterError)
+  @objc dynamic public func didDisplayRewardedAd()
+  @objc dynamic public func didDisplayRewardedAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didFailToDisplayRewardedAdWithError(_ adapterError: AppLovinSDK.MAAdapterError)
+  @objc dynamic public func didFailToDisplayRewardedAdWithError(_ adapterError: AppLovinSDK.MAAdapterError, extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didClickRewardedAd()
+  @objc dynamic public func didClickRewardedAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didHideRewardedAd()
+  @objc dynamic public func didHideRewardedAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didRewardUser(with reward: AppLovinSDK.MAReward)
+  @objc dynamic public func didRewardUser(with reward: AppLovinSDK.MAReward, extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didLoadInterstitialAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didDisplayInterstitialAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didClickInterstitialAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didHideInterstitialAd(withExtraInfo extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didFailToDisplayInterstitialAdWithError(_ adapterError: AppLovinSDK.MAAdapterError, extraInfo: [Swift.String : Any]?)
+  @objc dynamic public func didLoadInterstitialAd()
+  @objc dynamic public func didFailToLoadInterstitialAdWithError(_ error: AppLovinSDK.MAAdapterError)
+  @objc dynamic public func didDisplayInterstitialAd()
+  @objc dynamic public func didClickInterstitialAd()
+  @objc dynamic public func didHideInterstitialAd()
+  @objc dynamic public func didFailToDisplayInterstitialAdWithError(_ error: AppLovinSDK.MAAdapterError)
+}
+@_inheritsConvenienceInitializers @objc(ISApUnityCustomInterstitial) public class ISApUnityCustomInterstitial : IronSource.ISBaseInterstitial, ApMediationiOSSDK.ApAdLoadListener, ApMediationiOSSDK.ApInterstitialAdListener {
+  @objc override dynamic public func loadAd(with adData: IronSource.ISAdData, delegate: any IronSource.ISInterstitialAdDelegate)
+  @objc override dynamic public func isAdAvailable(with adData: IronSource.ISAdData) -> Swift.Bool
+  @objc override dynamic public func showAd(with viewController: UIKit.UIViewController, adData: IronSource.ISAdData, delegate: any IronSource.ISInterstitialAdDelegate)
+  public func loadStatus(isLoaded: Swift.Bool)
+  @objc override dynamic public init(_ providerConfig: IronSource.ISAdapterConfig)
+  @objc override dynamic public init(adUnit: IronSource.ISAdUnit, adapterConfig: IronSource.ISAdapterConfig)
+  @objc override dynamic public init(adUnit: IronSource.ISAdUnit, adapterConfig: IronSource.ISAdapterConfig, adUnitObjectId: Foundation.UUID?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension ApMediationiOSSDK.ISApUnityCustomInterstitial : IronSource.ISInterstitialAdDelegate {
+  @objc dynamic public func adDidClose()
+  @objc dynamic public func adDidClose(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidShowSucceed()
+  @objc dynamic public func adDidShowSucceed(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidBecomeVisible()
+  @objc dynamic public func adDidBecomeVisible(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidStart()
+  @objc dynamic public func adDidStart(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidEnd()
+  @objc dynamic public func adDidEnd(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidLoad()
+  @objc dynamic public func adDidLoad(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidFailToLoadWith(_ errorType: IronSource.ISAdapterErrorType, errorCode: Swift.Int, errorMessage: Swift.String?)
+  @objc dynamic public func adDidFailToLoadWith(_ errorType: IronSource.ISAdapterErrorType, errorCode: Swift.Int, errorMessage: Swift.String?, extraData: [Swift.String : Any])
+  @objc dynamic public func adDidOpen()
+  @objc dynamic public func adDidOpen(withExtraData extraData: [Swift.String : Any])
+  @objc dynamic public func adDidFailToShowWithErrorCode(_ errorCode: Swift.Int, errorMessage: Swift.String?)
+  @objc dynamic public func adDidFailToShowWithErrorCode(_ errorCode: Swift.Int, errorMessage: Swift.String?, extraData: [Swift.String : Any])
+  @objc dynamic public func adDidClick()
+  @objc dynamic public func adDidClick(withExtraData extraData: [Swift.String : Any])
+}
+@_inheritsConvenienceInitializers @objc(ISApMediationUnityCustomAdapter) public class ISApMediationUnityCustomAdapter : IronSource.ISBaseNetworkAdapter {
+  @objc override dynamic public func networkSDKVersion() -> Swift.String
+  @objc override dynamic public func adapterVersion() -> Swift.String
+  @objc override dynamic public func `init`(_ adData: IronSource.ISAdData, delegate: any IronSource.ISNetworkInitializationDelegate)
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc public protocol ApRewardedAdListener {
@@ -74,11 +203,4 @@ import os
   @objc public func onUserRewarded()
   @objc override dynamic public init()
   @objc deinit
-}
-public protocol ApAdLoadListener {
-  func loadStatus(isLoaded: Swift.Bool)
-}
-public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
-  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
-  public func loadStatus(isLoaded: Swift.Bool)
 }

@@ -281,7 +281,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AppLovinSDK;
+@import Foundation;
 @import GoogleMobileAds;
+@import IronSource;
 @import ObjectiveC;
 #endif
 
@@ -359,12 +362,6 @@ SWIFT_CLASS("_TtC17ApMediationiOSSDK18ApMediationAdapter")
 - (void)loadBannerForAdConfiguration:(GADMediationBannerAdConfiguration * _Nonnull)adConfiguration completionHandler:(GADMediationBannerLoadCompletionHandler _Nonnull)completionHandler;
 @end
 
-SWIFT_CLASS("_TtC17ApMediationiOSSDK14ApMediationSDK")
-@interface ApMediationSDK : NSObject
-+ (void)enableDebugWithIsEnable:(BOOL)isEnable;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 SWIFT_PROTOCOL("_TtP17ApMediationiOSSDK20ApRewardedAdListener_")
 @protocol ApRewardedAdListener
 @optional
@@ -376,6 +373,64 @@ SWIFT_PROTOCOL("_TtP17ApMediationiOSSDK20ApRewardedAdListener_")
 - (void)onUserRewarded;
 @end
 
+@class NSString;
+@protocol MAAdapterInitializationParameters;
+@protocol MAAdapterResponseParameters;
+@protocol MAInterstitialAdapterDelegate;
+@class NSNumber;
+@class MAAdFormat;
+SWIFT_CLASS_NAMED("ApMediationAppLovinAdapter")
+@interface ApMediationAppLovinAdapter : NSObject <ApInterstitialAdListener, ApRewardedAdListener, MAInterstitialAdapter>
+@property (nonatomic, copy) NSString * _Nonnull SDKVersion;
+@property (nonatomic, copy) NSString * _Nonnull adapterVersion;
+@property (nonatomic, getter=isBeta) BOOL beta;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)initializeWithParameters:(id <MAAdapterInitializationParameters> _Nonnull)parameters withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)loadInterstitialAdForParameters:(id <MAAdapterResponseParameters> _Nonnull)parameters andNotify:(id <MAInterstitialAdapterDelegate> _Nonnull)delegate;
+- (void)showInterstitialAdForParameters:(id <MAAdapterResponseParameters> _Nonnull)parameters andNotify:(id <MAInterstitialAdapterDelegate> _Nonnull)delegate;
+- (NSNumber * _Nullable)shouldInitializeOnMainThread SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldCollectSignalsOnMainThread SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldLoadAdsOnMainThreadForAdFormat:(MAAdFormat * _Nonnull)adFormat SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldShowAdsOnMainThreadForAdFormat:(MAAdFormat * _Nonnull)adFormat SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldDestroyOnMainThread SWIFT_WARN_UNUSED_RESULT;
+- (void)destroy;
+@end
+
+@class MAAdapterError;
+@class MAReward;
+@interface ApMediationAppLovinAdapter (SWIFT_EXTENSION(ApMediationiOSSDK)) <MAInterstitialAdapterDelegate, MARewardedAdapterDelegate>
+- (void)didLoadRewardedAd;
+- (void)didLoadRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didFailToLoadRewardedAdWithError:(MAAdapterError * _Nonnull)adapterError;
+- (void)didDisplayRewardedAd;
+- (void)didDisplayRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didFailToDisplayRewardedAdWithError:(MAAdapterError * _Nonnull)adapterError;
+- (void)didFailToDisplayRewardedAdWithError:(MAAdapterError * _Nonnull)adapterError extraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didClickRewardedAd;
+- (void)didClickRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didHideRewardedAd;
+- (void)didHideRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didRewardUserWithReward:(MAReward * _Nonnull)reward;
+- (void)didRewardUserWithReward:(MAReward * _Nonnull)reward extraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didLoadInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didDisplayInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didClickInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didHideInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didFailToDisplayInterstitialAdWithError:(MAAdapterError * _Nonnull)adapterError extraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didLoadInterstitialAd;
+- (void)didFailToLoadInterstitialAdWithError:(MAAdapterError * _Nonnull)error;
+- (void)didDisplayInterstitialAd;
+- (void)didClickInterstitialAd;
+- (void)didHideInterstitialAd;
+- (void)didFailToDisplayInterstitialAdWithError:(MAAdapterError * _Nonnull)error;
+@end
+
+SWIFT_CLASS("_TtC17ApMediationiOSSDK14ApMediationSDK")
+@interface ApMediationSDK : NSObject
++ (void)enableDebugWithIsEnable:(BOOL)isEnable;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 SWIFT_CLASS("_TtC17ApMediationiOSSDK18ApRewardedListener")
 @interface ApRewardedListener : NSObject <ApRewardedAdListener>
 - (void)onAdClicked;
@@ -385,6 +440,92 @@ SWIFT_CLASS("_TtC17ApMediationiOSSDK18ApRewardedListener")
 - (void)onAdDismissed;
 - (void)onUserRewarded;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class ISAdData;
+@protocol ISRewardedVideoAdDelegate;
+@class UIViewController;
+@class ISAdapterConfig;
+@class ISAdUnit;
+@class NSUUID;
+SWIFT_CLASS_NAMED("ApUnityRewardedAdCustomAdapter")
+@interface ApUnityRewardedAdCustomAdapter : ISBaseRewardedVideo <ApRewardedAdListener>
+- (void)loadAdWithAdData:(ISAdData * _Nonnull)adData delegate:(id <ISRewardedVideoAdDelegate> _Nonnull)delegate;
+- (void)showAdWithViewController:(UIViewController * _Nonnull)viewController adData:(ISAdData * _Nonnull)adData delegate:(id <ISRewardedVideoAdDelegate> _Nonnull)delegate;
+- (BOOL)isAdAvailableWithAdData:(ISAdData * _Nonnull)adData SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init:(ISAdapterConfig * _Nonnull)providerConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig adUnitObjectId:(NSUUID * _Nullable)adUnitObjectId OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@interface ApUnityRewardedAdCustomAdapter (SWIFT_EXTENSION(ApMediationiOSSDK)) <ISRewardedVideoAdDelegate>
+- (void)adRewarded;
+- (void)adRewardedWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidClose;
+- (void)adDidCloseWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidShowSucceed;
+- (void)adDidShowSucceedWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidBecomeVisible;
+- (void)adDidBecomeVisibleWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidStart;
+- (void)adDidStartWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidEnd;
+- (void)adDidEndWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidLoad;
+- (void)adDidLoadWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidOpen;
+- (void)adDidOpenWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidClick;
+- (void)adDidClickWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+@end
+
+@protocol ISNetworkInitializationDelegate;
+SWIFT_CLASS_NAMED("ISApMediationUnityCustomAdapter")
+@interface ISApMediationUnityCustomAdapter : ISBaseNetworkAdapter
+- (NSString * _Nonnull)networkSDKVersion SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)adapterVersion SWIFT_WARN_UNUSED_RESULT;
+- (void)init:(ISAdData * _Nonnull)adData delegate:(id <ISNetworkInitializationDelegate> _Nonnull)delegate SWIFT_METHOD_FAMILY(none);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@protocol ISInterstitialAdDelegate;
+SWIFT_CLASS_NAMED("ISApUnityCustomInterstitial")
+@interface ISApUnityCustomInterstitial : ISBaseInterstitial <ApInterstitialAdListener>
+- (void)loadAdWithAdData:(ISAdData * _Nonnull)adData delegate:(id <ISInterstitialAdDelegate> _Nonnull)delegate;
+- (BOOL)isAdAvailableWithAdData:(ISAdData * _Nonnull)adData SWIFT_WARN_UNUSED_RESULT;
+- (void)showAdWithViewController:(UIViewController * _Nonnull)viewController adData:(ISAdData * _Nonnull)adData delegate:(id <ISInterstitialAdDelegate> _Nonnull)delegate;
+- (nonnull instancetype)init:(ISAdapterConfig * _Nonnull)providerConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig adUnitObjectId:(NSUUID * _Nullable)adUnitObjectId OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@interface ISApUnityCustomInterstitial (SWIFT_EXTENSION(ApMediationiOSSDK)) <ISInterstitialAdDelegate>
+- (void)adDidClose;
+- (void)adDidCloseWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidShowSucceed;
+- (void)adDidShowSucceedWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidBecomeVisible;
+- (void)adDidBecomeVisibleWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidStart;
+- (void)adDidStartWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidEnd;
+- (void)adDidEndWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidLoad;
+- (void)adDidLoadWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidOpen;
+- (void)adDidOpenWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidClick;
+- (void)adDidClickWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
 @end
 
 #endif
@@ -678,7 +819,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AppLovinSDK;
+@import Foundation;
 @import GoogleMobileAds;
+@import IronSource;
 @import ObjectiveC;
 #endif
 
@@ -756,12 +900,6 @@ SWIFT_CLASS("_TtC17ApMediationiOSSDK18ApMediationAdapter")
 - (void)loadBannerForAdConfiguration:(GADMediationBannerAdConfiguration * _Nonnull)adConfiguration completionHandler:(GADMediationBannerLoadCompletionHandler _Nonnull)completionHandler;
 @end
 
-SWIFT_CLASS("_TtC17ApMediationiOSSDK14ApMediationSDK")
-@interface ApMediationSDK : NSObject
-+ (void)enableDebugWithIsEnable:(BOOL)isEnable;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 SWIFT_PROTOCOL("_TtP17ApMediationiOSSDK20ApRewardedAdListener_")
 @protocol ApRewardedAdListener
 @optional
@@ -773,6 +911,64 @@ SWIFT_PROTOCOL("_TtP17ApMediationiOSSDK20ApRewardedAdListener_")
 - (void)onUserRewarded;
 @end
 
+@class NSString;
+@protocol MAAdapterInitializationParameters;
+@protocol MAAdapterResponseParameters;
+@protocol MAInterstitialAdapterDelegate;
+@class NSNumber;
+@class MAAdFormat;
+SWIFT_CLASS_NAMED("ApMediationAppLovinAdapter")
+@interface ApMediationAppLovinAdapter : NSObject <ApInterstitialAdListener, ApRewardedAdListener, MAInterstitialAdapter>
+@property (nonatomic, copy) NSString * _Nonnull SDKVersion;
+@property (nonatomic, copy) NSString * _Nonnull adapterVersion;
+@property (nonatomic, getter=isBeta) BOOL beta;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (void)initializeWithParameters:(id <MAAdapterInitializationParameters> _Nonnull)parameters withCompletionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)loadInterstitialAdForParameters:(id <MAAdapterResponseParameters> _Nonnull)parameters andNotify:(id <MAInterstitialAdapterDelegate> _Nonnull)delegate;
+- (void)showInterstitialAdForParameters:(id <MAAdapterResponseParameters> _Nonnull)parameters andNotify:(id <MAInterstitialAdapterDelegate> _Nonnull)delegate;
+- (NSNumber * _Nullable)shouldInitializeOnMainThread SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldCollectSignalsOnMainThread SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldLoadAdsOnMainThreadForAdFormat:(MAAdFormat * _Nonnull)adFormat SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldShowAdsOnMainThreadForAdFormat:(MAAdFormat * _Nonnull)adFormat SWIFT_WARN_UNUSED_RESULT;
+- (NSNumber * _Nullable)shouldDestroyOnMainThread SWIFT_WARN_UNUSED_RESULT;
+- (void)destroy;
+@end
+
+@class MAAdapterError;
+@class MAReward;
+@interface ApMediationAppLovinAdapter (SWIFT_EXTENSION(ApMediationiOSSDK)) <MAInterstitialAdapterDelegate, MARewardedAdapterDelegate>
+- (void)didLoadRewardedAd;
+- (void)didLoadRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didFailToLoadRewardedAdWithError:(MAAdapterError * _Nonnull)adapterError;
+- (void)didDisplayRewardedAd;
+- (void)didDisplayRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didFailToDisplayRewardedAdWithError:(MAAdapterError * _Nonnull)adapterError;
+- (void)didFailToDisplayRewardedAdWithError:(MAAdapterError * _Nonnull)adapterError extraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didClickRewardedAd;
+- (void)didClickRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didHideRewardedAd;
+- (void)didHideRewardedAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didRewardUserWithReward:(MAReward * _Nonnull)reward;
+- (void)didRewardUserWithReward:(MAReward * _Nonnull)reward extraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didLoadInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didDisplayInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didClickInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didHideInterstitialAdWithExtraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didFailToDisplayInterstitialAdWithError:(MAAdapterError * _Nonnull)adapterError extraInfo:(NSDictionary<NSString *, id> * _Nullable)extraInfo;
+- (void)didLoadInterstitialAd;
+- (void)didFailToLoadInterstitialAdWithError:(MAAdapterError * _Nonnull)error;
+- (void)didDisplayInterstitialAd;
+- (void)didClickInterstitialAd;
+- (void)didHideInterstitialAd;
+- (void)didFailToDisplayInterstitialAdWithError:(MAAdapterError * _Nonnull)error;
+@end
+
+SWIFT_CLASS("_TtC17ApMediationiOSSDK14ApMediationSDK")
+@interface ApMediationSDK : NSObject
++ (void)enableDebugWithIsEnable:(BOOL)isEnable;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 SWIFT_CLASS("_TtC17ApMediationiOSSDK18ApRewardedListener")
 @interface ApRewardedListener : NSObject <ApRewardedAdListener>
 - (void)onAdClicked;
@@ -782,6 +978,92 @@ SWIFT_CLASS("_TtC17ApMediationiOSSDK18ApRewardedListener")
 - (void)onAdDismissed;
 - (void)onUserRewarded;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class ISAdData;
+@protocol ISRewardedVideoAdDelegate;
+@class UIViewController;
+@class ISAdapterConfig;
+@class ISAdUnit;
+@class NSUUID;
+SWIFT_CLASS_NAMED("ApUnityRewardedAdCustomAdapter")
+@interface ApUnityRewardedAdCustomAdapter : ISBaseRewardedVideo <ApRewardedAdListener>
+- (void)loadAdWithAdData:(ISAdData * _Nonnull)adData delegate:(id <ISRewardedVideoAdDelegate> _Nonnull)delegate;
+- (void)showAdWithViewController:(UIViewController * _Nonnull)viewController adData:(ISAdData * _Nonnull)adData delegate:(id <ISRewardedVideoAdDelegate> _Nonnull)delegate;
+- (BOOL)isAdAvailableWithAdData:(ISAdData * _Nonnull)adData SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init:(ISAdapterConfig * _Nonnull)providerConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig adUnitObjectId:(NSUUID * _Nullable)adUnitObjectId OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@interface ApUnityRewardedAdCustomAdapter (SWIFT_EXTENSION(ApMediationiOSSDK)) <ISRewardedVideoAdDelegate>
+- (void)adRewarded;
+- (void)adRewardedWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidClose;
+- (void)adDidCloseWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidShowSucceed;
+- (void)adDidShowSucceedWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidBecomeVisible;
+- (void)adDidBecomeVisibleWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidStart;
+- (void)adDidStartWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidEnd;
+- (void)adDidEndWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidLoad;
+- (void)adDidLoadWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidOpen;
+- (void)adDidOpenWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidClick;
+- (void)adDidClickWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+@end
+
+@protocol ISNetworkInitializationDelegate;
+SWIFT_CLASS_NAMED("ISApMediationUnityCustomAdapter")
+@interface ISApMediationUnityCustomAdapter : ISBaseNetworkAdapter
+- (NSString * _Nonnull)networkSDKVersion SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)adapterVersion SWIFT_WARN_UNUSED_RESULT;
+- (void)init:(ISAdData * _Nonnull)adData delegate:(id <ISNetworkInitializationDelegate> _Nonnull)delegate SWIFT_METHOD_FAMILY(none);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@protocol ISInterstitialAdDelegate;
+SWIFT_CLASS_NAMED("ISApUnityCustomInterstitial")
+@interface ISApUnityCustomInterstitial : ISBaseInterstitial <ApInterstitialAdListener>
+- (void)loadAdWithAdData:(ISAdData * _Nonnull)adData delegate:(id <ISInterstitialAdDelegate> _Nonnull)delegate;
+- (BOOL)isAdAvailableWithAdData:(ISAdData * _Nonnull)adData SWIFT_WARN_UNUSED_RESULT;
+- (void)showAdWithViewController:(UIViewController * _Nonnull)viewController adData:(ISAdData * _Nonnull)adData delegate:(id <ISInterstitialAdDelegate> _Nonnull)delegate;
+- (nonnull instancetype)init:(ISAdapterConfig * _Nonnull)providerConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAdUnit:(ISAdUnit * _Nonnull)adUnit adapterConfig:(ISAdapterConfig * _Nonnull)adapterConfig adUnitObjectId:(NSUUID * _Nullable)adUnitObjectId OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@interface ISApUnityCustomInterstitial (SWIFT_EXTENSION(ApMediationiOSSDK)) <ISInterstitialAdDelegate>
+- (void)adDidClose;
+- (void)adDidCloseWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidShowSucceed;
+- (void)adDidShowSucceedWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidBecomeVisible;
+- (void)adDidBecomeVisibleWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidStart;
+- (void)adDidStartWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidEnd;
+- (void)adDidEndWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidLoad;
+- (void)adDidLoadWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToLoadWithErrorType:(ISAdapterErrorType)errorType errorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidOpen;
+- (void)adDidOpenWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage;
+- (void)adDidFailToShowWithErrorCode:(NSInteger)errorCode errorMessage:(NSString * _Nullable)errorMessage extraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
+- (void)adDidClick;
+- (void)adDidClickWithExtraData:(NSDictionary<NSString *, id> * _Nonnull)extraData;
 @end
 
 #endif
