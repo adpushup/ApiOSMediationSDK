@@ -13,38 +13,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
-@_inheritsConvenienceInitializers @objc(ISApMediationUnityCustomAdapter) public class ISApMediationUnityCustomAdapter : IronSource.ISBaseNetworkAdapter {
-  @objc override dynamic public func networkSDKVersion() -> Swift.String
-  @objc override dynamic public func adapterVersion() -> Swift.String
-  @objc override dynamic public func `init`(_ adData: IronSource.ISAdData, delegate: any IronSource.ISNetworkInitializationDelegate)
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc public protocol ApRewardedAdListener {
-  @objc optional func onAdPresented()
-  @objc optional func onAdClicked()
-  @objc optional func onAdDismissed()
-  @objc optional func onAdImpression()
-  @objc optional func onError()
-  @objc optional func onUserRewarded()
-}
-@objc @_inheritsConvenienceInitializers open class ApRewardedListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApRewardedAdListener {
-  @objc public func onAdClicked()
-  @objc public func onAdImpression()
-  @objc public func onAdPresented()
-  @objc public func onError()
-  @objc public func onAdDismissed()
-  @objc public func onUserRewarded()
-  @objc override dynamic public init()
-  @objc deinit
-}
-public protocol ApAdLoadListener {
-  func loadStatus(isLoaded: Swift.Bool)
-}
-public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
-  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
-  public func loadStatus(isLoaded: Swift.Bool)
-}
 @_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
   @objc public static func enableDebug(isEnable: Swift.Bool)
   @objc override dynamic public init()
@@ -203,4 +171,36 @@ extension ApMediationiOSSDK.ISApUnityCustomInterstitial : IronSource.ISInterstit
   @objc dynamic public func adDidFailToShowWithErrorCode(_ errorCode: Swift.Int, errorMessage: Swift.String?, extraData: [Swift.String : Any])
   @objc dynamic public func adDidClick()
   @objc dynamic public func adDidClick(withExtraData extraData: [Swift.String : Any])
+}
+@_inheritsConvenienceInitializers @objc(ISApMediationUnityCustomAdapter) public class ISApMediationUnityCustomAdapter : IronSource.ISBaseNetworkAdapter {
+  @objc override dynamic public func networkSDKVersion() -> Swift.String
+  @objc override dynamic public func adapterVersion() -> Swift.String
+  @objc override dynamic public func `init`(_ adData: IronSource.ISAdData, delegate: any IronSource.ISNetworkInitializationDelegate)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol ApRewardedAdListener {
+  @objc optional func onAdPresented()
+  @objc optional func onAdClicked()
+  @objc optional func onAdDismissed()
+  @objc optional func onAdImpression()
+  @objc optional func onError()
+  @objc optional func onUserRewarded()
+}
+@objc @_inheritsConvenienceInitializers open class ApRewardedListener : ObjectiveC.NSObject, ApMediationiOSSDK.ApRewardedAdListener {
+  @objc public func onAdClicked()
+  @objc public func onAdImpression()
+  @objc public func onAdPresented()
+  @objc public func onError()
+  @objc public func onAdDismissed()
+  @objc public func onUserRewarded()
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol ApAdLoadListener {
+  func loadStatus(isLoaded: Swift.Bool)
+}
+public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
+  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
+  public func loadStatus(isLoaded: Swift.Bool)
 }

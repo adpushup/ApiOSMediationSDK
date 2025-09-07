@@ -5,186 +5,6 @@
     "printedName": "ApMediationiOSSDK",
     "children": [
       {
-        "kind": "TypeDecl",
-        "name": "ApAdLoadListener",
-        "printedName": "ApAdLoadListener",
-        "children": [
-          {
-            "kind": "Function",
-            "name": "loadStatus",
-            "printedName": "loadStatus(isLoaded:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:17ApMediationiOSSDK0A14AdLoadListenerP10loadStatus8isLoadedySb_tF",
-            "mangledName": "$s17ApMediationiOSSDK0A14AdLoadListenerP10loadStatus8isLoadedySb_tF",
-            "moduleName": "ApMediationiOSSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : ApMediationiOSSDK.ApAdLoadListener>",
-            "sugared_genericSig": "<Self where Self : ApMediationiOSSDK.ApAdLoadListener>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Protocol",
-        "usr": "s:17ApMediationiOSSDK0A14AdLoadListenerP",
-        "mangledName": "$s17ApMediationiOSSDK0A14AdLoadListenerP",
-        "moduleName": "ApMediationiOSSDK",
-        "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "ApAdLoadListenerClosure",
-        "printedName": "ApAdLoadListenerClosure",
-        "children": [
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(handler:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ApAdLoadListenerClosure",
-                "printedName": "ApMediationiOSSDK.ApAdLoadListenerClosure",
-                "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.Bool) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ]
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV7handlerACySbc_tcfc",
-            "mangledName": "$s17ApMediationiOSSDK0A21AdLoadListenerClosureV7handlerACySbc_tcfc",
-            "moduleName": "ApMediationiOSSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "loadStatus",
-            "printedName": "loadStatus(isLoaded:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV10loadStatus8isLoadedySb_tF",
-            "mangledName": "$s17ApMediationiOSSDK0A21AdLoadListenerClosureV10loadStatus8isLoadedySb_tF",
-            "moduleName": "ApMediationiOSSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV",
-        "mangledName": "$s17ApMediationiOSSDK0A21AdLoadListenerClosureV",
-        "moduleName": "ApMediationiOSSDK",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "ApAdLoadListener",
-            "printedName": "ApAdLoadListener",
-            "usr": "s:17ApMediationiOSSDK0A14AdLoadListenerP",
-            "mangledName": "$s17ApMediationiOSSDK0A14AdLoadListenerP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "ApMediationiOSSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "ApMediationiOSSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -6531,81 +6351,191 @@
         "declAttributes": [
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ApAdLoadListener",
+        "printedName": "ApAdLoadListener",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "loadStatus",
+            "printedName": "loadStatus(isLoaded:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17ApMediationiOSSDK0A14AdLoadListenerP10loadStatus8isLoadedySb_tF",
+            "mangledName": "$s17ApMediationiOSSDK0A14AdLoadListenerP10loadStatus8isLoadedySb_tF",
+            "moduleName": "ApMediationiOSSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ApMediationiOSSDK.ApAdLoadListener>",
+            "sugared_genericSig": "<Self where Self : ApMediationiOSSDK.ApAdLoadListener>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17ApMediationiOSSDK0A14AdLoadListenerP",
+        "mangledName": "$s17ApMediationiOSSDK0A14AdLoadListenerP",
+        "moduleName": "ApMediationiOSSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ApAdLoadListenerClosure",
+        "printedName": "ApAdLoadListenerClosure",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(handler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ApAdLoadListenerClosure",
+                "printedName": "ApMediationiOSSDK.ApAdLoadListenerClosure",
+                "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV7handlerACySbc_tcfc",
+            "mangledName": "$s17ApMediationiOSSDK0A21AdLoadListenerClosureV7handlerACySbc_tcfc",
+            "moduleName": "ApMediationiOSSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "loadStatus",
+            "printedName": "loadStatus(isLoaded:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV10loadStatus8isLoadedySb_tF",
+            "mangledName": "$s17ApMediationiOSSDK0A21AdLoadListenerClosureV10loadStatus8isLoadedySb_tF",
+            "moduleName": "ApMediationiOSSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17ApMediationiOSSDK0A21AdLoadListenerClosureV",
+        "mangledName": "$s17ApMediationiOSSDK0A21AdLoadListenerClosureV",
+        "moduleName": "ApMediationiOSSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ApAdLoadListener",
+            "printedName": "ApAdLoadListener",
+            "usr": "s:17ApMediationiOSSDK0A14AdLoadListenerP",
+            "mangledName": "$s17ApMediationiOSSDK0A14AdLoadListenerP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ApMediationiOSSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ApMediationiOSSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       }
     ],
     "json_format_version": 8
   },
   "ConstValues": [
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Rewarded\/ApGAMRewarded.swift",
-      "kind": "StringLiteral",
-      "offset": 188,
-      "length": 15,
-      "value": "\"ApGIAdManager\""
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Rewarded\/ApGAMRewarded.swift",
-      "kind": "IntegerLiteral",
-      "offset": 238,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/RemoteConfigManager.swift",
-      "kind": "StringLiteral",
-      "offset": 249,
-      "length": 20,
-      "value": "\"RemoteConfigWorker\""
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/RemoteConfigManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 306,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
-      "kind": "IntegerLiteral",
-      "offset": 249,
-      "length": 7,
-      "value": "3000000"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
-      "kind": "IntegerLiteral",
-      "offset": 278,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
-      "kind": "IntegerLiteral",
-      "offset": 314,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
-      "kind": "IntegerLiteral",
-      "offset": 342,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
-      "kind": "Array",
-      "offset": 379,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
-      "kind": "IntegerLiteral",
-      "offset": 413,
-      "length": 1,
-      "value": "0"
-    },
     {
       "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Constants.swift",
       "kind": "StringLiteral",
@@ -7046,6 +6976,76 @@
       "offset": 292,
       "length": 24,
       "value": "\"ApMediationSdkSettings\""
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Rewarded\/ApGAMRewarded.swift",
+      "kind": "StringLiteral",
+      "offset": 188,
+      "length": 15,
+      "value": "\"ApGIAdManager\""
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Rewarded\/ApGAMRewarded.swift",
+      "kind": "IntegerLiteral",
+      "offset": 238,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/RemoteConfigManager.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 20,
+      "value": "\"RemoteConfigWorker\""
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/RemoteConfigManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 306,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
+      "kind": "IntegerLiteral",
+      "offset": 249,
+      "length": 7,
+      "value": "3000000"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
+      "kind": "IntegerLiteral",
+      "offset": 278,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
+      "kind": "IntegerLiteral",
+      "offset": 314,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
+      "kind": "IntegerLiteral",
+      "offset": 342,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
+      "kind": "Array",
+      "offset": 379,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/rishabhtripathi\/Documents\/iOSSDK\/ApMediationiOSSDK\/Sources\/ApMediationiOSSDK\/Common\/AdUnitObject.swift",
+      "kind": "IntegerLiteral",
+      "offset": 413,
+      "length": 1,
+      "value": "0"
     }
   ]
 }

@@ -14,5 +14,6 @@ Pod::Spec.new do |spec|
   spec.swift_version = "5.0"
   spec.vendored_frameworks = "Sources/ApiOSMediationSDK/ApMediationiOSSDK.xcframework"
   spec.dependency 'Google-Mobile-Ads-SDK', '~> 11.13'
-
+  spec.dependency 'AppLovinSDK', '~> 13.3'
+  spec.dependency 'IronSourceSDK','8.11.0.0'
 end

@@ -13,13 +13,6 @@ import _StringProcessing
 import _SwiftConcurrencyShims
 import os.lock
 import os
-public protocol ApAdLoadListener {
-  func loadStatus(isLoaded: Swift.Bool)
-}
-public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
-  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
-  public func loadStatus(isLoaded: Swift.Bool)
-}
 @_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
   @objc public static func enableDebug(isEnable: Swift.Bool)
   @objc override dynamic public init()
@@ -203,4 +196,11 @@ extension ApMediationiOSSDK.ISApUnityCustomInterstitial : IronSource.ISInterstit
   @objc public func onUserRewarded()
   @objc override dynamic public init()
   @objc deinit
+}
+public protocol ApAdLoadListener {
+  func loadStatus(isLoaded: Swift.Bool)
+}
+public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
+  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
+  public func loadStatus(isLoaded: Swift.Bool)
 }
