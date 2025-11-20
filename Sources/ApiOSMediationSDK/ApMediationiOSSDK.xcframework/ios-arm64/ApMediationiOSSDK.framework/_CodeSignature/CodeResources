@@ -14,35 +14,19 @@
 		</data>
 		<key>Headers/ApMediationiOSSDK-Swift.h</key>
 		<data>
-		Az8iHoJyGE38v7K/1h5eUKm3ZKU=
+		hOZDUb08genKvozXnalEETzuDZQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
 		qeYENBYLXwymVWWygbIpqVc+WZk=
 		</data>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/Info.plist</key>
-		<data>
-		Hm4Y8Ztd+rpVmK3W9P9qJPIP2tc=
-		</data>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		l2ZduCvSJbNtPnHg+4cAbLgDbyQ=
-		</data>
-		<key>IronSourcePrivacyInfo.bundle/Info.plist</key>
-		<data>
-		D/ZHUVH4cqBIYIw5WhbUzDy5SFw=
-		</data>
-		<key>IronSourcePrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		BLNjR6VVI/K82v3iQCE5o0YXgGI=
-		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		vwqxVhERThtGhLQhgkXgfDw+PV4=
+		H/JKGUDrflLqxxrz1qC5IzUcZmg=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		D0v0iS5GTHsNYqUBGULc5YUSLCg=
+		f4z2M/FPKW/RaEIOX5BrNX13us8=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -50,11 +34,11 @@
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		D0v0iS5GTHsNYqUBGULc5YUSLCg=
+		f4z2M/FPKW/RaEIOX5BrNX13us8=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		9iFaifsDmoHTKsm+F5oVFluWsgo=
+		Y5xR8l9Cng/V80F1Gi9nWZo3C8M=
 		</data>
 		<key>UserMessagingPlatformResources.bundle/Info.plist</key>
 		<data>
@@ -93,77 +77,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Az8iHoJyGE38v7K/1h5eUKm3ZKU=
+			hOZDUb08genKvozXnalEETzuDZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			S9KRYoe2QJM9Hif19QJTCgdAwgPj+xsar6GbSAFKaF0=
-			</data>
-		</dict>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Hm4Y8Ztd+rpVmK3W9P9qJPIP2tc=
-			</data>
-			<key>hash2</key>
-			<data>
-			BTI9aMkzGKS8aeZVj1TI7mudahl39RAtx1M6cZph6nQ=
-			</data>
-		</dict>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			l2ZduCvSJbNtPnHg+4cAbLgDbyQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			r2z7AqVxBGjN8OndNxmPkrvnp5Bc0eybVPrs5UKShZ8=
-			</data>
-		</dict>
-		<key>IronSourcePrivacyInfo.bundle/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			D/ZHUVH4cqBIYIw5WhbUzDy5SFw=
-			</data>
-			<key>hash2</key>
-			<data>
-			Rl0aM5DBBnzO9PxH7GRr+lU5p596zYW1pvYGOKLOBwA=
-			</data>
-		</dict>
-		<key>IronSourcePrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BLNjR6VVI/K82v3iQCE5o0YXgGI=
-			</data>
-			<key>hash2</key>
-			<data>
-			ES/wHPURrhqoWqlouH6JyVI5Y7FKY1pgaWMpkbPGo0E=
+			dsRCQutPgGDMQMHZRX5jZxElhQPDZIRfeT8F5fSzN5w=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vwqxVhERThtGhLQhgkXgfDw+PV4=
+			H/JKGUDrflLqxxrz1qC5IzUcZmg=
 			</data>
 			<key>hash2</key>
 			<data>
-			+mERGRqViQ7UnkIezL1yQgMyOlfbSj3ffGrpzfA5h6Q=
+			iJLfownH8/vmv0htu6rBX9axYsaMqr9ivFqaS4tWlCI=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			D0v0iS5GTHsNYqUBGULc5YUSLCg=
+			f4z2M/FPKW/RaEIOX5BrNX13us8=
 			</data>
 			<key>hash2</key>
 			<data>
-			VL5qTIyrLhskU8qRcgoOO3c15NuP7Z2yT0M7doOmiBY=
+			6lL6BYhtDzc5V7oc31dDsRlfHSNzd8W3hgX8IjEFu8Y=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -181,22 +121,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			D0v0iS5GTHsNYqUBGULc5YUSLCg=
+			f4z2M/FPKW/RaEIOX5BrNX13us8=
 			</data>
 			<key>hash2</key>
 			<data>
-			VL5qTIyrLhskU8qRcgoOO3c15NuP7Z2yT0M7doOmiBY=
+			6lL6BYhtDzc5V7oc31dDsRlfHSNzd8W3hgX8IjEFu8Y=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9iFaifsDmoHTKsm+F5oVFluWsgo=
+			Y5xR8l9Cng/V80F1Gi9nWZo3C8M=
 			</data>
 			<key>hash2</key>
 			<data>
-			cgecXg645u+rnsK+378XBiFT2QsbHQSTaGdDbyjWw68=
+			EIZcCQlp6jB0b1FNynluoevj4wjHmp2h5Hmrk8uBPXE=
 			</data>
 		</dict>
 		<key>UserMessagingPlatformResources.bundle/Info.plist</key>

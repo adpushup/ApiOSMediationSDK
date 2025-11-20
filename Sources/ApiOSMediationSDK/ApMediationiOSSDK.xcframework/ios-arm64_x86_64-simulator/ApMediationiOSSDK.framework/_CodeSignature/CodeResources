@@ -14,35 +14,19 @@
 		</data>
 		<key>Headers/ApMediationiOSSDK-Swift.h</key>
 		<data>
-		r49bTMbj0OZqQXROE6T5WrfH6CM=
+		AuczASW8aANnsPpA2P8TzL+KA/Y=
 		</data>
 		<key>Info.plist</key>
 		<data>
 		aMWzoG/q8J5OwyIWfHIHGRsDt04=
 		</data>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/Info.plist</key>
-		<data>
-		r1xXOb31cjrohUOwncYwn+lCAgs=
-		</data>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		l2ZduCvSJbNtPnHg+4cAbLgDbyQ=
-		</data>
-		<key>IronSourcePrivacyInfo.bundle/Info.plist</key>
-		<data>
-		6EWAtB7jfEjbT7DR+3H4cc4m5+0=
-		</data>
-		<key>IronSourcePrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<data>
-		BLNjR6VVI/K82v3iQCE5o0YXgGI=
-		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		eovNcTdXRoxNTxyavrMmRDv2WyY=
+		x1HnFyqw90bmSvuq4IRbwd4lDRs=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		DDVyW7b2maRhpWN/XKICvul8cNc=
+		/70R9JzwBvmqHGE5dDxEsh5bD0c=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,19 +34,19 @@
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		DDVyW7b2maRhpWN/XKICvul8cNc=
+		/70R9JzwBvmqHGE5dDxEsh5bD0c=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ui1mU+I/eTxgRVg7T/qJEUyhiWk=
+		+JnR4gmDt7/aCWRIS8P6N2u8aFQ=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		eovNcTdXRoxNTxyavrMmRDv2WyY=
+		x1HnFyqw90bmSvuq4IRbwd4lDRs=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		52ePMcY3E788P/ZU8Vf0k8sRUJc=
+		roTLj01E1UqBhDYdt6ABolyZj3g=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -70,11 +54,11 @@
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		52ePMcY3E788P/ZU8Vf0k8sRUJc=
+		roTLj01E1UqBhDYdt6ABolyZj3g=
 		</data>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		apU3TBDNRJCG6S7VDyWIZrnziWg=
+		wUsbHRx91ou4yvBq9E78/XT2Tic=
 		</data>
 		<key>UserMessagingPlatformResources.bundle/Info.plist</key>
 		<data>
@@ -113,77 +97,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			r49bTMbj0OZqQXROE6T5WrfH6CM=
+			AuczASW8aANnsPpA2P8TzL+KA/Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			bNYRZVQVXI2XwfpjCv+lGYA8xoItYsjCkac8tPCEcBk=
-			</data>
-		</dict>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			r1xXOb31cjrohUOwncYwn+lCAgs=
-			</data>
-			<key>hash2</key>
-			<data>
-			jf6oLlSBxv3xSoCR0+zthZ03mtr+yti5ALWqJ2BbT3o=
-			</data>
-		</dict>
-		<key>IronSourceAdQualityPrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			l2ZduCvSJbNtPnHg+4cAbLgDbyQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			r2z7AqVxBGjN8OndNxmPkrvnp5Bc0eybVPrs5UKShZ8=
-			</data>
-		</dict>
-		<key>IronSourcePrivacyInfo.bundle/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6EWAtB7jfEjbT7DR+3H4cc4m5+0=
-			</data>
-			<key>hash2</key>
-			<data>
-			feeWAJ4B1QMEZ25w+NuMoSTXA0nmls/y+wHT5VUQJTQ=
-			</data>
-		</dict>
-		<key>IronSourcePrivacyInfo.bundle/PrivacyInfo.xcprivacy</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BLNjR6VVI/K82v3iQCE5o0YXgGI=
-			</data>
-			<key>hash2</key>
-			<data>
-			ES/wHPURrhqoWqlouH6JyVI5Y7FKY1pgaWMpkbPGo0E=
+			/Pk2Ksd1z3F+FAFRwt795gJGNSd4omI7w9KNj4BxkQI=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eovNcTdXRoxNTxyavrMmRDv2WyY=
+			x1HnFyqw90bmSvuq4IRbwd4lDRs=
 			</data>
 			<key>hash2</key>
 			<data>
-			4QrmbaeKXA8pxn8x8Jy5kB2D3IrXXgZhjtEkJHU38Uk=
+			mudZkPpspcFXtHHR5pOCIL9yrSI1Hg/LuSVJ8RwFSwY=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DDVyW7b2maRhpWN/XKICvul8cNc=
+			/70R9JzwBvmqHGE5dDxEsh5bD0c=
 			</data>
 			<key>hash2</key>
 			<data>
-			1qGmA/NpR3ujLNiArOmRIsCRTLb4DyPKUVfSAg18zOQ=
+			taxJQlcXFin9TfLOiJzA+mINFHNZnweUmArOz+psxXc=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -201,44 +141,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DDVyW7b2maRhpWN/XKICvul8cNc=
+			/70R9JzwBvmqHGE5dDxEsh5bD0c=
 			</data>
 			<key>hash2</key>
 			<data>
-			1qGmA/NpR3ujLNiArOmRIsCRTLb4DyPKUVfSAg18zOQ=
+			taxJQlcXFin9TfLOiJzA+mINFHNZnweUmArOz+psxXc=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ui1mU+I/eTxgRVg7T/qJEUyhiWk=
+			+JnR4gmDt7/aCWRIS8P6N2u8aFQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			r7byHNn9dZluKp9+NvggRtLCkM5iAwyh4cYMe3gC4I8=
+			muaoSMjrzASfO+v57SVVK7EmwWAtVowEhyLJtUV23lc=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eovNcTdXRoxNTxyavrMmRDv2WyY=
+			x1HnFyqw90bmSvuq4IRbwd4lDRs=
 			</data>
 			<key>hash2</key>
 			<data>
-			4QrmbaeKXA8pxn8x8Jy5kB2D3IrXXgZhjtEkJHU38Uk=
+			mudZkPpspcFXtHHR5pOCIL9yrSI1Hg/LuSVJ8RwFSwY=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			52ePMcY3E788P/ZU8Vf0k8sRUJc=
+			roTLj01E1UqBhDYdt6ABolyZj3g=
 			</data>
 			<key>hash2</key>
 			<data>
-			g8Ebw5SLepkzlQ8G25d2pJ66JogCYXTtdJaK6Eci/XQ=
+			G+3xw9CrbKRIEc5vG82MeQX5G2t8P6i+iBO+vI+YdN0=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -256,22 +196,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			52ePMcY3E788P/ZU8Vf0k8sRUJc=
+			roTLj01E1UqBhDYdt6ABolyZj3g=
 			</data>
 			<key>hash2</key>
 			<data>
-			g8Ebw5SLepkzlQ8G25d2pJ66JogCYXTtdJaK6Eci/XQ=
+			G+3xw9CrbKRIEc5vG82MeQX5G2t8P6i+iBO+vI+YdN0=
 			</data>
 		</dict>
 		<key>Modules/ApMediationiOSSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			apU3TBDNRJCG6S7VDyWIZrnziWg=
+			wUsbHRx91ou4yvBq9E78/XT2Tic=
 			</data>
 			<key>hash2</key>
 			<data>
-			x9xhwtZSp6lw3qnElt9NsVf+9i8DqZZ0kfh+M8qk824=
+			Xhotd78ddmMY8nFNzKzjdWBfthPQbWQAXKIkgmsZvDY=
 			</data>
 		</dict>
 		<key>UserMessagingPlatformResources.bundle/Info.plist</key>

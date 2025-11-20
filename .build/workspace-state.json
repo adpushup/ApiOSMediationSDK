@@ -2,7 +2,11 @@
   "object" : {
     "artifacts" : [
       {
-        "kind" : "xcframework",
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
         "packageRef" : {
           "identity" : "apiosmediationsdk",
           "kind" : "root",
@@ -11,21 +15,25 @@
         },
         "path" : "/Users/Rishabh/Documents/ApiOSMediationSDK/.build/artifacts/apiosmediationsdk/ApiOSMediationSDK/ApMediationiOSSDK.xcframework",
         "source" : {
-          "checksum" : "7f9ff26a04cc90329c3d2a59c7f12447914c6ffde3dc2779f8d3541ca59d1acc",
+          "checksum" : "5cac58c835c20638358816f375073886844110bcee819dab3318fcafccca0f1c",
           "type" : "remote",
-          "url" : "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.3/ApMediationiOSSDK.xcframework.zip"
+          "url" : "https://github.com/adpushup/ApiOSMediationSDK/releases/download/1.0.2/ApMediationiOSSDK.xcframework.zip"
         },
         "targetName" : "ApiOSMediationSDK"
       },
       {
-        "kind" : "xcframework",
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
         "packageRef" : {
           "identity" : "swift-package-manager-google-mobile-ads",
           "kind" : "remoteSourceControl",
           "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
           "name" : "GoogleMobileAds"
         },
-        "path" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK/.build/artifacts/swift-package-manager-google-mobile-ads/GoogleMobileAds/GoogleMobileAds.xcframework",
+        "path" : "/Users/Rishabh/Documents/ApiOSMediationSDK/.build/artifacts/swift-package-manager-google-mobile-ads/GoogleMobileAds/GoogleMobileAds.xcframework",
         "source" : {
           "checksum" : "f2c09c60ee331ce029f563304ad73a481d57ace0d4bc11ce33a2bf59497c59bf",
           "type" : "remote",
@@ -34,14 +42,18 @@
         "targetName" : "GoogleMobileAds"
       },
       {
-        "kind" : "xcframework",
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
         "packageRef" : {
           "identity" : "swift-package-manager-google-user-messaging-platform",
           "kind" : "remoteSourceControl",
           "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
           "name" : "GoogleUserMessagingPlatform"
         },
-        "path" : "/Users/rishabhtripathi/Documents/ApiOSMediationSDK/.build/artifacts/swift-package-manager-google-user-messaging-platform/UserMessagingPlatform/UserMessagingPlatform.xcframework",
+        "path" : "/Users/Rishabh/Documents/ApiOSMediationSDK/.build/artifacts/swift-package-manager-google-user-messaging-platform/UserMessagingPlatform/UserMessagingPlatform.xcframework",
         "source" : {
           "checksum" : "bd2f30ebe527900b8d789e5e54831b021d032e7dbfd73b90e6f73c2a48b1c683",
           "type" : "remote",
