@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ApMediationiOSSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ApMediationiOSSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Foundation
 import GoogleMobileAds
 import Swift
@@ -25,6 +25,13 @@ import os
   @objc override dynamic public init()
   @objc deinit
 }
+public protocol ApAdLoadListener {
+  func loadStatus(isLoaded: Swift.Bool)
+}
+public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
+  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
+  public func loadStatus(isLoaded: Swift.Bool)
+}
 @objc public protocol ApInterstitialAdListener {
   @objc optional func onAdPresented()
   @objc optional func onAdClicked()
@@ -39,22 +46,6 @@ import os
   @objc public func onError()
   @objc public func onAdDismissed()
   @objc override dynamic public init()
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
-  @objc public static func enableDebug(isEnable: Swift.Bool)
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers public class ApMediationAdapter : ObjectiveC.NSObject, GoogleMobileAds.GADMediationAdapter {
-  @objc required override dynamic public init()
-  @objc public static func adapterVersion() -> GoogleMobileAds.GADVersionNumber
-  @objc public static func adSDKVersion() -> GoogleMobileAds.GADVersionNumber
-  @objc public static func networkExtrasClass() -> (any GoogleMobileAds.GADAdNetworkExtras.Type)?
-  @objc public static func setUpWith(_ adConfiguration: GoogleMobileAds.GADMediationServerConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationAdapterSetUpCompletionBlock)
-  @objc public func loadInterstitial(for adConfiguration: GoogleMobileAds.GADMediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
-  @objc public func loadRewardedAd(for adConfiguration: GoogleMobileAds.GADMediationRewardedAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationRewardedLoadCompletionHandler)
-  @objc public func loadBanner(for adConfiguration: GoogleMobileAds.GADMediationBannerAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationBannerLoadCompletionHandler)
   @objc deinit
 }
 @objc public protocol ApRewardedAdListener {
@@ -75,10 +66,21 @@ import os
   @objc override dynamic public init()
   @objc deinit
 }
-public protocol ApAdLoadListener {
-  func loadStatus(isLoaded: Swift.Bool)
+@objc @_inheritsConvenienceInitializers public class ApMediationAdapter : ObjectiveC.NSObject, GoogleMobileAds.GADMediationAdapter {
+  @objc required override dynamic public init()
+  @objc public static func adapterVersion() -> GoogleMobileAds.GADVersionNumber
+  @objc public static func adSDKVersion() -> GoogleMobileAds.GADVersionNumber
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func networkExtrasClass() -> (any GoogleMobileAds.GADAdNetworkExtras.Type)?
+  #endif
+  @objc public static func setUpWith(_ adConfiguration: GoogleMobileAds.GADMediationServerConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationAdapterSetUpCompletionBlock)
+  @objc public func loadInterstitial(for adConfiguration: GoogleMobileAds.GADMediationInterstitialAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationInterstitialLoadCompletionHandler)
+  @objc public func loadRewardedAd(for adConfiguration: GoogleMobileAds.GADMediationRewardedAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationRewardedLoadCompletionHandler)
+  @objc public func loadBanner(for adConfiguration: GoogleMobileAds.GADMediationBannerAdConfiguration, completionHandler: @escaping GoogleMobileAds.GADMediationBannerLoadCompletionHandler)
+  @objc deinit
 }
-public struct ApAdLoadListenerClosure : ApMediationiOSSDK.ApAdLoadListener {
-  public init(handler: @escaping (Swift.Bool) -> Swift.Void)
-  public func loadStatus(isLoaded: Swift.Bool)
+@_inheritsConvenienceInitializers @objc public class ApMediationSDK : ObjectiveC.NSObject {
+  @objc public static func enableDebug(isEnable: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
 }
